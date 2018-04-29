@@ -1,0 +1,56 @@
+[Thu Apr 26 22:07:12.546951 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:53101] mod_wsgi (pid=32069): Target WSGI script '/var/www/FPlayer/wsgi.py' cannot be loaded as Python module.
+[Thu Apr 26 22:07:12.546973 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:53101] mod_wsgi (pid=32069): Exception occurred processing WSGI script '/var/www/FPlayer/wsgi.py'.
+[Thu Apr 26 22:07:12.546986 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:53101] Traceback (most recent call last):
+[Thu Apr 26 22:07:12.546996 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:53101]   File "/var/www/FPlayer/wsgi.py", line 10, in <module>
+[Thu Apr 26 22:07:12.547024 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:53101]     from fplayer import app as application
+[Thu Apr 26 22:07:12.547030 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:53101]   File "/var/www/FPlayer/fplayer.py", line 12, in <module>
+[Thu Apr 26 22:07:12.547059 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:53101]     from user import User
+[Thu Apr 26 22:07:12.547071 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:53101] ImportError: cannot import name User
+[Thu Apr 26 22:07:13.513814 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845] mod_wsgi (pid=32069): Target WSGI script '/var/www/FPlayer/wsgi.py' cannot be loaded as Python module.
+[Thu Apr 26 22:07:13.513825 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845] mod_wsgi (pid=32069): Exception occurred processing WSGI script '/var/www/FPlayer/wsgi.py'.
+[Thu Apr 26 22:07:13.513834 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845] Traceback (most recent call last):
+[Thu Apr 26 22:07:13.513844 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845]   File "/var/www/FPlayer/wsgi.py", line 10, in <module>
+[Thu Apr 26 22:07:13.513856 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845]     from fplayer import app as application
+[Thu Apr 26 22:07:13.513860 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845]   File "/var/www/FPlayer/fplayer.py", line 12, in <module>
+[Thu Apr 26 22:07:13.513866 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845]     from user import User
+[Thu Apr 26 22:07:13.513875 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845] ImportError: cannot import name User
+[Thu Apr 26 22:09:26.233102 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845] mod_wsgi (pid=32069): Target WSGI script '/var/www/FPlayer/wsgi.py' cannot be loaded as Python module.
+[Thu Apr 26 22:09:26.233119 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845] mod_wsgi (pid=32069): Exception occurred processing WSGI script '/var/www/FPlayer/wsgi.py'.
+[Thu Apr 26 22:09:26.233128 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845] Traceback (most recent call last):
+[Thu Apr 26 22:09:26.233137 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845]   File "/var/www/FPlayer/wsgi.py", line 10, in <module>
+[Thu Apr 26 22:09:26.233151 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845]     from fplayer import app as application
+[Thu Apr 26 22:09:26.233155 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845]   File "/var/www/FPlayer/fplayer.py", line 12, in <module>
+[Thu Apr 26 22:09:26.233162 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845]     from user import User
+[Thu Apr 26 22:09:26.233171 2018] [wsgi:error] [pid 32069] [remote 127.0.0.1:52845] ImportError: cannot import name User
+[Thu Apr 26 22:14:28.504008 2018] [wsgi:error] [pid 32501] [remote 127.0.0.1:53101] mod_wsgi (pid=32501): Target WSGI script '/var/www/FPlayer/wsgi.py' cannot be loaded as Python module.
+[Thu Apr 26 22:14:28.504031 2018] [wsgi:error] [pid 32501] [remote 127.0.0.1:53101] mod_wsgi (pid=32501): Exception occurred processing WSGI script '/var/www/FPlayer/wsgi.py'.
+[Thu Apr 26 22:14:28.504061 2018] [wsgi:error] [pid 32501] [remote 127.0.0.1:53101] Traceback (most recent call last):
+[Thu Apr 26 22:14:28.504073 2018] [wsgi:error] [pid 32501] [remote 127.0.0.1:53101]   File "/var/www/FPlayer/wsgi.py", line 10, in <module>
+[Thu Apr 26 22:14:28.504102 2018] [wsgi:error] [pid 32501] [remote 127.0.0.1:53101]     from fplayer import app as application
+[Thu Apr 26 22:14:28.504113 2018] [wsgi:error] [pid 32501] [remote 127.0.0.1:53101]   File "/var/www/FPlayer/fplayer.py", line 12, in <module>
+[Thu Apr 26 22:14:28.504143 2018] [wsgi:error] [pid 32501] [remote 127.0.0.1:53101]     from user import User
+[Thu Apr 26 22:14:28.504154 2018] [wsgi:error] [pid 32501] [remote 127.0.0.1:53101] ImportError: cannot import name User
+[Thu Apr 26 22:21:23.085486 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:53101] mod_wsgi (pid=325): Target WSGI script '/var/www/FPlayer/wsgi.py' cannot be loaded as Python module.
+[Thu Apr 26 22:21:23.085507 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:53101] mod_wsgi (pid=325): Exception occurred processing WSGI script '/var/www/FPlayer/wsgi.py'.
+[Thu Apr 26 22:21:23.085519 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:53101] Traceback (most recent call last):
+[Thu Apr 26 22:21:23.085529 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:53101]   File "/var/www/FPlayer/wsgi.py", line 10, in <module>
+[Thu Apr 26 22:21:23.085568 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:53101]     from fplayer import app as application
+[Thu Apr 26 22:21:23.085573 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:53101]   File "/var/www/FPlayer/fplayer.py", line 12, in <module>
+[Thu Apr 26 22:21:23.085602 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:53101]     from user import User
+[Thu Apr 26 22:21:23.085614 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:53101] ImportError: cannot import name User
+[Thu Apr 26 22:22:31.268356 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845] mod_wsgi (pid=325): Target WSGI script '/var/www/FPlayer/wsgi.py' cannot be loaded as Python module.
+[Thu Apr 26 22:22:31.268392 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845] mod_wsgi (pid=325): Exception occurred processing WSGI script '/var/www/FPlayer/wsgi.py'.
+[Thu Apr 26 22:22:31.268414 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845] Traceback (most recent call last):
+[Thu Apr 26 22:22:31.268438 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845]   File "/var/www/FPlayer/wsgi.py", line 10, in <module>
+[Thu Apr 26 22:22:31.268470 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845]     from fplayer import app as application
+[Thu Apr 26 22:22:31.268481 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845]   File "/var/www/FPlayer/fplayer.py", line 12, in <module>
+[Thu Apr 26 22:22:31.268498 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845]     from user import User
+[Thu Apr 26 22:22:31.268519 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845] ImportError: cannot import name User
+[Thu Apr 26 22:30:28.612333 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845] mod_wsgi (pid=325): Target WSGI script '/var/www/FPlayer/wsgi.py' cannot be loaded as Python module.
+[Thu Apr 26 22:30:28.612349 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845] mod_wsgi (pid=325): Exception occurred processing WSGI script '/var/www/FPlayer/wsgi.py'.
+[Thu Apr 26 22:30:28.612358 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845] Traceback (most recent call last):
+[Thu Apr 26 22:30:28.612367 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845]   File "/var/www/FPlayer/wsgi.py", line 10, in <module>
+[Thu Apr 26 22:30:28.612397 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845]     from fplayer import app as application
+[Thu Apr 26 22:30:28.612403 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845]   File "/var/www/FPlayer/fplayer.py", line 12, in <module>
+[Thu Apr 26 22:30:28.612411 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845]     from user import User
+[Thu Apr 26 22:30:28.612420 2018] [wsgi:error] [pid 325] [remote 127.0.0.1:52845] ImportError: cannot import name User
