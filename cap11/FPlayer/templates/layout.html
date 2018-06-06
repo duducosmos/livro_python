@@ -22,28 +22,31 @@
 </head>
 
 <body>
-    {% block menu %}
-      <nav>
-          <div class='nav-wrapper blue'>
-              <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
-              <a href="#" class="brand-logo center">FPlayer</a>
-              <ul id="nav-mobile" class="left hide-on-med-and-down">
-                  <li><a href="{{ url_for("home")}}">Home</a></li>
-                  <li><a href="{{ url_for("logout")}}">logout</a></li>
-              </ul>
-          </div>
-          <ul class="side-nav" id="mobile-nav">
-              <li><a href="{{ url_for("home") }}">Home</a></li>
-              <li><a href="{{ url_for("logout")}}">logout</a></li>
-          </ul>
-      </nav>
-    {% endblock %}
-
+    <nav>
+        <div class='nav-wrapper blue'>
+            <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo center">FPlayer</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="{{ url_for("home")}}">Home</a></li>
+                <li><a href="{{ url_for("logout")}}">logout</a></li>
+            </ul>
+        </div>
+        <ul class="side-nav" id="mobile-nav">
+            <li><a href="{{ url_for("home") }}">Home</a></li>
+            <li><a href="{{ url_for("logout")}}">logout</a></li>
+        </ul>
+    </nav>
     <div id="content" class="container">
         {% block content %} {% endblock %}
     </div>
     <br>
     <br>
     <br>
+    <br>
+    <footer class="page-footer blue center-align">
+            <p class="grey-text text-lighten-4 "> E. S. Pereira, </p>
+            <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> </p>
+    </footer>
 </body>
 </html>

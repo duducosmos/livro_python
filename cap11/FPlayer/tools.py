@@ -2,31 +2,16 @@
 # -*- Coding: UTF-8 -*-
 
 '''
-Modulo tools com funcoes auxiliares para o fplayer.
+Módulo tools com funcoes auxiliares para o fplayer.
 '''
 
 from flask import url_for
-from flask_mail import Message
 import glob
 
 from mutagen import File
 from model import model
 
 MUSICFOLDER = 'static/musics/'
-
-
-def revocerpass(username, usermail, keyuid):
-    sender = "upcursosetreinamentosonline@gmail.com"
-    subject = 'Recuperar Senha'
-    msg = Message(subject=subject, sender=sender, recipients=[usermail])
-    body = "Prezado {0}, use o link para recuperar a senha: ".format(
-        username)
-    body += "http://127.0.0.1:5000/novapass/keypass={} \n".format(keyuid)
-    body += "Esse link expira em 30 minutos\n"
-    print(body)
-    msg.body = body
-    return msg
-
 
 def updatemusic():
     db = model()

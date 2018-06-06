@@ -20,17 +20,31 @@ login_manager = flask_login.LoginManager()
 login_manager.init_app(app)
 
 
+
 app.config.update(
-    DEBUG=True,
-    # EMAIL SETTINGS
-    MAIL_SERVER='smtp-relay.sendinblue.com',
-    MAIL_PORT=587,
-    MAIL_USE_SSL=False,
-    MAIL_USERNAME="pereira.somoza@gmail.com",
-    MAIL_PASSWORD="w4ZsMVPQh6rq2KtW"
-)
+	DEBUG=True,
+	#EMAIL SETTINGS
+	MAIL_SERVER='smtp.gmail.com',
+	MAIL_PORT=587,
+	MAIL_USE_SSL=False,
+	MAIL_USERNAME = "meuemail@gmail.com",
+	MAIL_PASSWORD = "minhasenha"
+	)
 
 mail = Mail(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get_user(user_id)
+
+@app.route('/logout')
+def logout():
+    flask_login.logout_user()
+    return redirect(url_for('login'))
+
+@login_manager.unauthorized_handler
+def unauthorized_handler():
+    return redirect(url_for('login'))
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -46,7 +60,6 @@ def register():
                            email=email,
                            password=password)
             db.commit()
-            flash('User successfully registered')
             return redirect(url_for('login'))
         else:
             return render_template('register.html')
@@ -54,19 +67,13 @@ def register():
     else:
         return render_template('register.html')
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.get_user(user_id)
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
 	if flask_login.current_user.is_authenticated:
 		return redirect(url_for("home"))
 
-	error = 0
 	if request.method == 'GET':
-		return render_template("login.html", error=error)
+		return render_template("login.html")
 
 	email = request.form['email']
 	password = request.form['pw']
@@ -74,32 +81,16 @@ def login():
 	user = User(email, password)
 
 	if user.get_id() is None:
-		error = user.errorlogin
-		return render_template("login.html", error=error)
+		return render_template("login.html")
 
 	flask_login.login_user(user)
 	return redirect(url_for('home'))
-
-
-@app.route('/logout')
-def logout():
-    flask_login.logout_user()
-    return redirect(url_for('login'))
-
-@login_manager.unauthorized_handler
-def unauthorized_handler():
-    return redirect(url_for('login'))
 
 
 @app.route("/sounds")
 def sounds():
     music = request.args["music"]
     return send_file(music, mimetype="audio/mp3")
-
-
-@app.route("/alternativCoverImage")
-def alternativCoverImage():
-    return app.send_static_file('images/noCoverImage.png')
 
 
 @app.route("/coverImage")
@@ -113,7 +104,7 @@ def coverImage():
         strIO.seek(0)
 
         return send_file(strIO,
-                         mimetype="image/jpg")
+                     mimetype="image/jpg")
     else:
         return app.send_static_file('images/noCoverImage.png')
 
@@ -126,7 +117,6 @@ def home():
     return render_template("home.html",
                            musicJ=musicJ,
                            username=flask_login.current_user.name)
-
 
 if(__name__ == "__main__"):
     app.run(debug=True)

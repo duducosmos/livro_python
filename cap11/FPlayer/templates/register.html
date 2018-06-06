@@ -1,18 +1,4 @@
 {% extends "layout.html"%}
-{% block menu %}
-  <nav>
-      <div class='nav-wrapper blue'>
-          <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
-          <a href="#" class="brand-logo center">FPlayer</a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><a href="{{ url_for("login")}}">Login</a></li>
-          </ul>
-      </div>
-      <ul class="side-nav" id="mobile-nav">
-          <li><a href="{{ url_for("login")}}">Login</a></li>
-      </ul>
-  </nav>
-{% endblock %}
 {% block content %}
 <form action='register' method='POST'>
   <input type='text' name='username' id='username' placeholder='username'></input>

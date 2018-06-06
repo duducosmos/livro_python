@@ -1,9 +1,8 @@
-#!/usr/bin/env python
+#/usr/bin/env python
 # -*- Coding: UTF-8 -*-
 
 import datetime
 from pydal import DAL, Field
-
 
 def model():
     dbinfo = 'sqlite://storage.sqlite'
@@ -13,29 +12,17 @@ def model():
     table(db)
     return db
 
-
 def table(db):
+
     db.define_table("user",
                     Field("name", 'string'),
                     Field("email", 'string'),
-                    Field('password', 'password'),
-                    Field("createdon", "datetime",
-                          default=datetime.datetime.now()
-                          )
-                    )
-    
-    db.define_table("newpass",
-                    Field("user", 'reference user'),
-                    Field("chave", 'string'),
-                    Field('expiraem', "datetime",
-                          default=datetime.datetime.now() +
-                          datetime.timedelta(minutes=30)
-                          ),
+                    Field('password', 'password')
                     )
 
     db.define_table("genero",
-                    Field("nome", 'string')
-                    )
+                  Field("nome", 'string')
+                  )
 
     db.define_table("musica",
                     Field("nome", 'string'),
@@ -58,9 +45,9 @@ def table(db):
                     )
 
     db.define_table("tocada",
-                    Field("tocadaem", 'datetime',
-                          default=datetime.datetime.now()
-                          ),
-                    Field("musica", "reference musica"),
-                    Field("user", 'reference user')
-                    )
+                  Field("tocadaem", 'datetime',
+                        default=datetime.datetime.now()
+                        ),
+                  Field("musica", "reference musica"),
+                  Field("user", 'reference user')
+                  )

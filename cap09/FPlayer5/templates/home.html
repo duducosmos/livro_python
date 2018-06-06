@@ -1,0 +1,104 @@
+{% extends "layout.html"%}
+{% block content %}
+<script type="text/javascript" src="{{url_for('static', filename='js/diskPage.js')}}"></script>
+<script>
+    set_ListOfMusics(JSON.parse('{{musicJ|tojson|safe}}'));
+    $(document).ready(function(){
+        startMusic();
+    });
+</script>
+
+<br>
+<audio id="myplay" >
+    <source id="audioSource" src=""></source>
+Your browser does not support the audio element.
+</audio>
+
+<div class="row">
+
+    <div class="col s12 center-align ">
+        <img class="responsive-img"  width="500px" height="500px"
+        id="coverImg" src="{{ musicJ[0]['coverURL'] }}" >
+
+    </div>
+
+    <div clas="col s12 center-align ">
+        <h4 id="artista" class="center-align">Artista</h5>
+        <h6 id="titulo" class="center-align">Titulo</h5>
+    </div>
+
+    <div class="col s2 center-align ">
+        <div id="ctime"></div>
+    </div>
+
+    <div class="col s8 center-align ">
+        <form action="#">
+            <p class="range-field">
+              <input id="rangeProgr" type="range" min="0" max="100" />
+            </p>
+         </form>
+    </div>
+    <div class="col s2 center-align ">
+        <div id="totalTime"></div>
+    </div>
+</div>
+
+<div class="center-align">
+    <a class="waves-effect waves-light btn" onmousedown="skip_previous()">
+        <i class="small material-icons">skip_previous</i>
+    </a>
+
+    <a class="waves-effect waves-light btn " onclick="onPlay()">
+        <i id="playbutton" class="small material-icons">play_arrow</i>
+    </a>
+
+     <a class="waves-effect waves-light btn" onmousedown="skip_next()">
+         <i class="small material-icons">skip_next</i>
+     </a>
+
+</div>
+<br>
+
+<div style="height:400px; overflow:scroll;">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Duration</th>
+            </tr>
+        </thead>
+            {% for i in range(musicJ|length) %}
+            <tr>
+                    {% if musicJ[i]['Tags'] != None %}
+                    <td>
+                        <a id="lim_{{i}}" style="color:blue;" onclick="changeMusic('{{ musicJ[i]['fileUrl'] }}')">
+                            {{ musicJ[i]['Tags']['TIT2'] }}
+                        </a>
+                    </td>
+                    <td>
+                            {{ musicJ[i]['Tags']['TPE1'] }}
+                    </td>
+
+                    {% else %}
+                        <td>
+                            <a id="lim_{{i}}" style="color:blue;" onclick="changeMusic('{{ musicJ[i]['fileUrl'] }}')">
+                                {{ musicJ[i]['fileName'] }}
+                            </a>
+                        </td>
+                        <td>
+                                unknown
+                        </td>
+
+                    {% endif %}
+                <td>
+                    {{ musicJ[i]['length']}}
+                </td>
+            </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

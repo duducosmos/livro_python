@@ -1,9 +1,0 @@
-click==6.7
-Flask==0.12.2
-itsdangerous==0.24
-Jinja2==2.10
-MarkupSafe==1.0
-mutagen==1.40.0
-pkg-resources==0.0.0
-pywebview==1.8
-Werkzeug==0.14.1
