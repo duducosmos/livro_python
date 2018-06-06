@@ -1,0 +1,48 @@
+timestamp: 2018-06-06T11:10:51.826869
+CREATE TABLE "user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "name" CHAR(512),
+    "email" CHAR(512),
+    "password" CHAR(512)
+);
+success!
+timestamp: 2018-06-06T11:10:51.915888
+CREATE TABLE "genero"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "nome" CHAR(512)
+);
+success!
+timestamp: 2018-06-06T11:10:52.001559
+CREATE TABLE "musica"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "nome" CHAR(512),
+    "cantor" CHAR(512),
+    "album" CHAR(512),
+    "arquivo" CHAR(512),
+    "tempo" CHAR(512),
+    "genero" TEXT
+);
+success!
+timestamp: 2018-06-06T11:10:52.087142
+CREATE TABLE "preferidas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "musica" INTEGER REFERENCES "musica" ("id") ON DELETE CASCADE  ,
+    "user" INTEGER REFERENCES "user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2018-06-06T11:10:52.173202
+CREATE TABLE "posicao"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "segundos" DOUBLE,
+    "musica" INTEGER REFERENCES "musica" ("id") ON DELETE CASCADE  ,
+    "user" INTEGER REFERENCES "user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2018-06-06T11:10:52.258399
+CREATE TABLE "tocada"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tocadaem" TIMESTAMP,
+    "musica" INTEGER REFERENCES "musica" ("id") ON DELETE CASCADE  ,
+    "user" INTEGER REFERENCES "user" ("id") ON DELETE CASCADE  
+);
+success!

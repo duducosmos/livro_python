@@ -1,0 +1,21 @@
+{% extends "layout.html"%}
+{% block content %}
+<br>
+<br>
+<br>
+  <div class="row">
+    <div class="col s6 offset-s3 center-align">
+      <div class="card  blue-grey z-depth-5">
+        <div class="card-content">
+          <span class="card-title">Login</span>
+            <form action='login' method='POST'>
+              <input type='text' name='email' id='email' placeholder='email'></input>
+              <input type='password' name='pw' id='pw' placeholder='password'></input>
+              <button class="btn waves-effect waves-light" type="submit" name="submit">Enviar
+              </button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    {% block head %}
+
+    <title>{% block title %}FPlayer{% endblock %}</title>
+
+    {% endblock %}
+
+    <script type="text/javascript">
+    $(document ).ready(function(){
+            $(".button-collapse").sideNav();
+             $('.materialboxed').materialbox();
+    });
+    </script>
+</head>
+
+<body>
+    <nav>
+        <div class='nav-wrapper blue'>
+            <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo center">FPlayer</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="{{ url_for("home")}}">Home</a></li>
+                <li><a href="{{ url_for("logout")}}">logout</a></li>
+            </ul>
+        </div>
+        <ul class="side-nav" id="mobile-nav">
+            <li><a href="{{ url_for("home") }}">Home</a></li>
+            <li><a href="{{ url_for("logout")}}">logout</a></li>
+        </ul>
+    </nav>
+    <div id="content" class="container">
+        {% block content %} {% endblock %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer class="page-footer blue center-align">
+            <p class="grey-text text-lighten-4 "> E. S. Pereira, </p>
+            <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> </p>
+    </footer>
+</body>
+</html>
